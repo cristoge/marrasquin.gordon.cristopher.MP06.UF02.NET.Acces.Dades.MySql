@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0713f03ba796a032661dd52f93859221ad6737b")]
 [assembly: System.Reflection.AssemblyProductAttribute("marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql")]
 [assembly: System.Reflection.AssemblyTitleAttribute("marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

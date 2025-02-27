@@ -38,3 +38,4 @@
 /Users/cristog/Prat/Deberes/JoanDatos/codigos/marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/cristog/Prat/Deberes/JoanDatos/codigos/marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Windows.Extensions.dll
 /Users/cristog/Prat/Deberes/JoanDatos/codigos/marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql/obj/Debug/net8.0/marrasqu.8FE3EA2D.Up2Date
+/Users/cristog/Prat/Deberes/JoanDatos/codigos/marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql/obj/Debug/net8.0/marrasquin.gordon.cristopher.MP06.UF02.NET.Acces.Dades.MySql.sourcelink.json

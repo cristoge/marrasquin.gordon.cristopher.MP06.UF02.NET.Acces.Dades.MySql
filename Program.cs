@@ -57,6 +57,7 @@ class Program
 
     public static void InserirVehicle()
     {
+        // Capturamos la información para el vehículo
         Console.Write("Marca: ");
         string marca = Console.ReadLine();
         Console.Write("Model: ");
@@ -64,6 +65,10 @@ class Program
         Console.Write("Capacitat del maleter: ");
         int capacitatMaleter = int.Parse(Console.ReadLine());
 
+        // Crear instancia del objeto Vehicle con los datos proporcionados
+        Vehicle vehicle = new Vehicle(marca, model, capacitatMaleter);
+
+        // Ahora usamos las propiedades del objeto para pasarlas a la consulta
         string sql = "INSERT INTO Vehicles (Marca, Model, CapacitatMaleter) VALUES (@Marca, @Model, @CapacitatMaleter)";
 
         using (var connection = GetConnection())
@@ -71,43 +76,45 @@ class Program
             connection.Open();
             using (var cmd = new MySqlCommand(sql, connection))
             {
-                cmd.Parameters.AddWithValue("@Marca", marca);
-                cmd.Parameters.AddWithValue("@Model", model);
-                cmd.Parameters.AddWithValue("@CapacitatMaleter", capacitatMaleter);
+                // Utilizamos los getters (en este caso, las propiedades) del objeto vehicle
+                cmd.Parameters.AddWithValue("@Marca", vehicle.Marca);
+                cmd.Parameters.AddWithValue("@Model", vehicle.Model);
+                cmd.Parameters.AddWithValue("@CapacitatMaleter", vehicle.CapacitatMaleter);
                 cmd.ExecuteNonQuery();
             }
             Console.WriteLine("✅ Vehicle inserit correctament.");
         }
     }
 
-public static List<Vehicle> LlegirVehicles()
-{
-    string sql = "SELECT * FROM Vehicles";
-    List<Vehicle> vehicles = new List<Vehicle>();
 
-    using (var connection = GetConnection())
+    public static List<Vehicle> LlegirVehicles()
     {
-        connection.Open();
-        using (var cmd = new MySqlCommand(sql, connection))
-        using (var reader = cmd.ExecuteReader())
-        {
-            while (reader.Read())
-            {
-                var vehicle = new Vehicle(
-                    reader.GetInt32("Id"),
-                    reader.GetString("Marca"),
-                    reader.GetString("Model"),
-                    reader.GetInt32("CapacitatMaleter")
-                );
-                vehicles.Add(vehicle);
-                Console.WriteLine(vehicle);
-            }
-        }
-        Console.WriteLine("Lectura de vehicles finalitzada.");
-    }
+        string sql = "SELECT * FROM Vehicles";
+        List<Vehicle> vehicles = new List<Vehicle>();
 
-    return vehicles; 
-}
+        using (var connection = GetConnection())
+        {
+            connection.Open();
+            using (var cmd = new MySqlCommand(sql, connection))
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var vehicle = new Vehicle(
+                        reader.GetInt32("Id"),
+                        reader.GetString("Marca"),
+                        reader.GetString("Model"),
+                        reader.GetInt32("CapacitatMaleter")
+                    );
+                    vehicles.Add(vehicle);
+                    Console.WriteLine(vehicle);
+                }
+            }
+            Console.WriteLine("Lectura de vehicles finalitzada.");
+        }
+
+        return vehicles;
+    }
 
 
     public static void ActualitzarVehicle()
